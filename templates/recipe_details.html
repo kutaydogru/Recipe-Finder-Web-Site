@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{ title }}</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe_details.css') }}">
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   <h1>{{ title }}</h1>
+
+  <div class = "image-like-button">
+
+   <img src="{{ image }}" alt="{{ title }}" width="300"><br>
+
+   <div class="image-container">
+    <input id="like-button" 
+    type = "image" 
+    src="{{ url_for('static', filename='images/heart.png') }}" 
+    alt="like"
+    data-heart = "{{ url_for('static', filename='images/heart.png') }}"
+    data-heart-filled = "{{ url_for('static', filename='images/heart_filled.png') }}"
+    width="50px">
+   </div>
+
+  </div>
+
+   <h2>Ingredients</h2>
+   <ul>
+       {% for ingredient in ingredients %}
+       <li>
+           <img src="{{ ingredient.image }}" alt="{{ ingredient.name }}" width="50">
+           {{ ingredient.original }}
+       </li>
+       {% endfor %}
+   </ul>
+
+   <h2>Recipe Instructions</h2>
+   <ol>
+       {% if steps and steps[0]['steps'] %}
+           {% for step in steps[0]['steps'] %}
+           <li>{{ step.step }}</li>
+           {% endfor %}
+       {% else %}
+           <p>No instructions available for this recipe.</p>
+       {% endif %}
+   </ol>
+
+   <!-- Flash Mesajları -->
+   {% with messages = get_flashed_messages(with_categories=true) %}
+     {% if messages %}
+     <div class="flash-messages">
+        {% for category, message in messages %}
+           <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+     </div>
+     {% endif %}
+    {% endwith %}
+
+   <div class="comment-section">
+        <h2>Leave a Comment</h2>
+        <form action="{{ url_for('add_comment', recipe_id=id) }}" method="POST">
+            <textarea id="comment-box" name="comment_text" placeholder="Write your comment here..."></textarea>
+            <button id="submit-comment" class="submit-button">Submit</button>
+        </form>
+
+        <h2>Comments</h2>
+        <ul>
+            {% for comment in comments %}
+            <li>
+                <strong>{{ comment.user.username }}</strong>: {{ comment.comment_text }} <em>({{ comment.created_at }})</em>
+            </li>
+            {% endfor %}
+        </ul>
+        
+   </div>
+   <script src="{{ url_for('static', filename='js/recipe_details.js') }}"></script>
+   
+</body>
+</html>
+

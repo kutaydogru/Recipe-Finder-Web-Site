@@ -1,0 +1,215 @@
+body{
+    background-color: #f7e1af;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1{
+    color:#144635;
+    text-align: center;  
+    font-size: 50px;
+}
+
+h2{
+    color:#144635;
+    text-align: left;  
+}
+
+.image-like-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Arama ve görsel arasında boşluk */
+    margin-top: 10px;
+    flex-wrap: nowrap; /* İçeriğin aynı satırda kalmasını sağlar */
+}
+
+.image-like-button img{
+    max-width: 300px; /* Görselleri kapsayıcı alana sığdırır */
+    border-radius: 5px; 
+    height: auto;
+}
+
+.image-container input[type="image"]{
+    width: 75px;
+    height:auto;
+    cursor:pointer;
+    transition: transform 0.3 ease;
+}
+
+.image-container input[type="image"]{
+    transform: scale(1.1);
+}
+
+ul{
+    display: flex; 
+    flex-wrap: wrap; /* İçerik taşarsa bir sonraki satıra geçsin */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    padding: 0; /* İç boşluk kaldırıldı */
+    margin: 20px auto; /* Ortaladı ve dış boşluk ekledi */
+    list-style-type: none; /* Varsayılan liste işaretlerini kaldırır */
+    max-width: 1200px; 
+}
+
+ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1f3a27;
+    box-sizing: border-box; /* Padding ve border genişliğe dahil edilir */
+    margin: 10px; 
+    padding: 5px;
+    border: 2px solid #ddd; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, background-color 0.3s;   
+}
+ol {
+    padding-left: 20px; /* Listenin sola uzaklığını belirler */
+    margin: 20px 0; /* Liste etrafındaki boşluklar */
+    list-style-type: decimal; /* Varsayılan madde işareti (1, 2, 3...) */
+}
+
+ol::marker {
+    font-weight: bold; 
+    color: #1f3a27;      
+}
+
+li {
+    font-size: 16px; 
+    color: #1f3a27; 
+    margin-bottom: 10px; /* Maddeler arasında boşluk */
+    line-height: 1.5; /* Satır yüksekliği */
+    padding: 5px; 
+    border-radius: 5px; 
+}
+
+p{
+    color:#144635;
+}
+
+.flash-messages p {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: blink 1s infinite;
+}
+
+.comment-section {
+    display: flex; /* Görünür olması için */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 20px auto; /* Ortalar ve yukarı-aşağı boşluk bırakır */
+    padding: 20px 20px; /* İç boşluk */
+    border: 1px solid #1f3a27; 
+    border-radius: 10px; 
+    background-color: #f7e1af; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.comment-section h2 {
+    font-size: 20px; 
+    color: #144635; 
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 15px; 
+    text-align: center;
+}
+
+.comment-section form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#comment-box {
+    width: 500px; 
+    height: 150px; 
+    padding: 10px 10px; 
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: none; /* Kullanıcının boyutlandırmasını engeller */
+    outline: none; /* Tıklanınca kenarlık vurgusunu kaldırır */
+    background-color:#f9f9f9; 
+    transition: border-color 0.3s ease; /* Kenarlık rengi geçişi */
+    box-sizing: border-box;
+}
+
+#comment-box:focus {
+    border-color: #144635; 
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.3); 
+}
+
+
+.submit-button {
+    margin-top: 10px; /* Yorum kutusunun altında boşluk */
+    padding: 10px 20px; /* İç boşluk */
+    width: 100%; 
+    font-size: 16px;
+    color: #fff; 
+    background-color: #144635; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.submit-button:hover {
+    background-color: #1f3a27; 
+    transform: scale(1.05); /* Hover sırasında büyütme */
+}
+
+.submit-button:active {
+    background-color: #1f3a27; 
+    transform: scale(0.95); /* Tıklama sırasında küçültme */
+}
+
+.comment-section ul{
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.comment-section ul li{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #144635;
+    line-height: 1.5;
+    color:#1f3a27;
+}
+
+.comment-section ul li em{
+    color:#1f3a27;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.comment-section ul li em{
+    font-size: 12px;
+    color:#144635;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; /* Görünür */
+    }
+    50% {
+        opacity: 0.5; /* Yarı saydam */
+    }
+    100% {
+        opacity: 1; /* Tekrar görünür */
+    }
+}

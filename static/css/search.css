@@ -1,0 +1,141 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f7e1af;
+}
+
+h1{
+    color:#144635;
+    text-align: center;
+    gap:15px;
+    width: 300 px;
+    margin: 50px auto;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.flash-messages p {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: blink 1s infinite;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Arama ve görsel arasında boşluk */
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;      /* Giriş ve butonu dikey hizalar */
+    align-items: center;     /* Etiket ve giriş kutusunu sola hizalar */
+    max-width: 300px;
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: 5px;          /* Etiketin giriş kutusuyla arasına boşluk ekler */
+    font-size: 16px;
+    font-weight: bold;
+    color: #144635;
+    margin-bottom: 8px;
+}
+
+.search-form input[type = "text"]{
+    width: 100%;                /* Genişlik formun genişliği kadar */
+    padding: 10px;              /* İç boşluk */
+    font-size: 14px;            /* Yazı boyutu */
+    border: 1px solid #ccc;     /* Kenarlık */
+    border-radius: 5px;         /* Kenarları yuvarlat */
+    box-sizing: border-box;     /* Taşmayı önlemek için */
+    outline: none;              /* Tıklamada mavi çerçeve yok */
+    transition: border-color 0.3s ease; /* Animasyonlu kenarlık */
+}
+
+.search-form input[type = "text"]:focus{
+    border-color: #144635;
+    box-shadow: 0 0 5px rgba(20, 70, 53, 0.3);
+}
+
+.search-form button {
+    width: 100%;                /* Buton genişliği */
+    padding: 10px 20px;              /* İç boşluk */
+    font-size: 16px;            /* Yazı boyutu */
+    color: #fff;                /* Beyaz yazı rengi */
+    background-color: #144635;  /* Yeşil arka plan */
+    border: none;               /* Kenarlık yok */
+    border-radius: 5px;         /* Kenarları yuvarlat */
+    cursor: pointer;            /* Hover'da el işareti */
+    transition: background-color 0.3s ease; /* Arka plan rengi geçişi */
+}
+
+.search-form button:hover {
+    background-color: #1f3a27;  /* Daha koyu yeşil */
+}
+
+.recipe-book-container{
+    position: relative; /* Tooltip için konumlandırma */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-book-container .tooltip {
+    visibility: hidden;         /* Varsayılan olarak gizli */
+    background-color: #1f3a27;    /* Tooltip arka planı */
+    color: #f7e1af;               /* Tooltip yazı rengi */
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -60px;              /* Tooltip'in alt pozisyonu */
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
+    white-space: wrap;        /* Tooltip'in tek satırda kalmasını sağlar */
+}
+
+.recipe-book-container:hover .tooltip {
+    visibility: visible;        /* Hover durumunda görünür */
+    opacity: 1;                 /* Opaklık geçişi */
+}
+
+.recipe-book-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.recipe-book-form input[type="image"] {
+    width: 60px;                 /* Görselin genişliğini belirler */
+    height: auto;                /* Oranlarını korur */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Hover efekti için */
+}
+
+.recipe-book-form input[type="image"]:hover {
+    transform: scale(1.1);       /* Hover sırasında büyütme efekti */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; /* Görünür */
+    }
+    50% {
+        opacity: 0.5; /* Yarı saydam */
+    }
+    100% {
+        opacity: 1; /* Tekrar görünür */
+    }
+}

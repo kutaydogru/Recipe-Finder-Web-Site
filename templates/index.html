@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Find recipes with ingredients at home!">
+        <title>Recipe Finder</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    <body>
+     <header>
+            <h1> Recipe Finder </h1>
+        </header>
+        <main>
+            <button id = "signUpBtn">Sign Up</button>
+            <button id = "logInBtn">Log In</button>
+        </main>
+        <script>
+            document.getElementById("signUpBtn").addEventListener("click", () => {
+              window.location.href = "/signup";
+            });
+            document.getElementById("logInBtn").addEventListener("click", () => {
+              window.location.href = "/login";
+            });
+          </script>
+    </body>
+
+</html>

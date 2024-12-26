@@ -1,0 +1,127 @@
+body{
+    background-color: #f7e1af;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1{
+    background-color: #f7e1af;
+    color:#144635;
+    text-align: center;
+    font-size: 50px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    width: 300 px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+form input[type = "text" ]{
+    width: 100%;                
+    padding: 10px;            
+    font-size: 16px;           
+    border: 2px solid #ccc;   
+    border-radius: 5px;         
+    box-sizing: border-box;    
+    outline: none;             
+    transition: border-color 0.3s ease; 
+}
+
+form input[type = "password"] {
+    width: 100%;                
+    padding: 10px;            
+    font-size: 16px;           
+    border: 2px solid #ccc;   
+    border-radius: 5px;         
+    box-sizing: border-box;    
+    outline: none;             
+    transition: border-color 0.3s ease; 
+}
+
+form input[type ="text"]:focus {
+    border-color: #144635;
+    box-shadow: 0 0 5px rgba(20, 70, 53, 0.3);
+}
+
+form input[type ="password"]:focus {
+    border-color: #144635;
+    box-shadow: 0 0 5px rgba(20, 70, 53, 0.3);
+}
+
+form button {
+    width: 100%;                
+    padding: 10px 20px;              
+    font-size: 16px;            
+    color: #fff;                
+    background-color: #144635;  
+    border: none;              
+    border-radius: 5px;         
+    cursor: pointer;            /* Hover'da el işareti */
+    transition: background-color 0.3s ease; 
+}
+
+form button:hover {
+    background-color: #1f3a27;  
+    transform: scale(1.0);
+}
+
+form button:active{
+    background-color: #1f3a27;
+    transform: scale(0.95);
+}
+
+div p{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: blink 1s infinite;
+}
+a{
+    padding: 10px;
+    font-size: 18px;
+    color:#144635;
+    border: 1px solid #144635;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+a:hover{
+    background-color: #144635;
+    color: #f7e1af;
+}
+a:active{
+    background-color: #144635;
+    color: #f7e1af;
+}
+
+/* Yanıp Sönme Animasyonu */
+@keyframes blink {
+    0% {
+        opacity: 1; /* Görünür */
+    }
+    50% {
+        opacity: 0.5; /* Yarı saydam */
+    }
+    100% {
+        opacity: 1; /* Tekrar görünür */
+    }
+}

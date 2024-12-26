@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Recipe Finder</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+
+</head>
+<body>
+   <h1>Find Recipes</h1>
+
+   {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+         <div class="flash-messages">
+            {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+         </div>
+      {% endif %}
+   {% endwith %}
+
+   <div class="search-container">
+
+      <form method="POST" action="/search" class="search-form">
+          <label for="ingredients">Enter ingredients (comma-separated):</label><br>
+          <input type="text" id="ingredients" name="ingredients" placeholder="e.g., apples, flour, sugar" required>
+          <button type="submit">Search Recipes</button>
+      </form>
+
+      <div class="recipe-book-container"> 
+         <form action="{{ url_for('recipe_book') }}" method="get" class="recipe-book-form">
+            <input id="image" type="image" src="{{ url_for('static', filename='images/notebook.png') }}" alt="Recipe Book">
+         </form>
+
+         <span class="tooltip">Go to Recipe Book</span>
+      </div>
+  </div> 
+</body>
+</html>

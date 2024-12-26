@@ -1,0 +1,117 @@
+body{
+    background-color: #f7e1af;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+h1{
+    background-color: #f7e1af;
+    color:#144635;
+    text-align: center;
+    font-size: 50px;
+}
+
+ul {
+    display: flex; 
+    flex-wrap: wrap; /* İçerik taşarsa bir sonraki satıra geçsin */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    padding: 0; /* İç boşluk kaldırıldı */
+    margin: 20px auto; /* Ortaladı ve dış boşluk ekledi */
+    list-style-type: none; /* Varsayılan liste işaretlerini kaldırır */
+    max-width: 1200px; /* Maksimum genişlik sınırı */
+}
+
+ul > h3{
+    color:#144635;
+    text-align: center;   
+    
+}
+
+ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 calc(33.333% - 20px); /* Her <li> %33 genişlikte */
+    box-sizing: border-box; /* Padding ve border genişliğe dahil edilir */
+    margin: 10px; /* Öğeler arasında boşluk */
+    padding: 20px; /* İç boşluk */
+    border: 2px solid #ddd; 
+    border-radius: 10px; 
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    transition: transform 0.3s, background-color 0.3s; /* Hover efekti */
+    
+}
+ul > li:hover {
+    background-color: #f9f9f9; /* Üzerine gelince arka plan rengi */
+    transform: scale(1.03); /* Hafif büyütme efekti */
+}
+
+
+ul > li img {
+    display: block; /* Görsellerin altına boşluk ekler */
+    margin: 0 auto 10px; /* Ortalar ve altına boşluk bırakır */
+    max-width: 80%; /* Görselleri kapsayıcı alana sığdırır */
+    border-radius: 5px; /* Görsel köşelerini yuvarlar */
+    height: auto;
+}
+
+
+ul > li h3 {
+    text-align: center; 
+    margin: 10px 0; /* Üst ve alt boşluk */
+    font-size: 18px; 
+    color: #333; 
+}
+
+
+ul > li p {
+    margin: 10px 0; /* Üst ve alt boşluk */
+    font-size: 14px; 
+    color: #555; 
+    text-align: center;
+}
+
+
+ul > li p strong {
+    color: #144635; 
+    font-weight: bold; 
+    text-align: center;
+}
+
+
+ul > li ul {
+    list-style-type: disc; /* İşaret stili */
+    padding-left: 20px; /* İşaretleri hizalar */
+    margin: 10px 0; /* Üst ve alt boşluk */
+    text-align: left;
+    width: 100%;
+}
+
+
+ul > li ul li {
+    font-size: 13px; 
+    color: #666; 
+    margin-bottom: 5px; 
+}
+
+
+ul > li a {
+    display: block; 
+    margin-top: auto; 
+    padding: 10px 15px; 
+    background-color: #144635; 
+    color: #fff; 
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    border-radius: 5px; 
+    text-align: center; /* Linki ortalar */
+    transition: background-color 0.3s; /* Hover efekti */
+    width: 80%;
+}
+
+
+ul > li a:hover {
+    background-color: #1f3a27; 
+}

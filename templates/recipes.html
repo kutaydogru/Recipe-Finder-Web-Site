@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Recipes</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/recipes.css') }}">
+   
+</head>
+<body>
+   <h1>
+    <a href="/search" style="text-decoration: none; color: inherit;">Recipe Results</a>
+</h1>
+   <ul>
+       {% for recipe in recipes %}
+       <li class="recipe-item">
+           <h3>{{ recipe.title }}</h3>
+           <img src="{{ recipe.image }}" alt="{{ recipe.title }}" width="150"><br>
+           <p><strong>Used Ingredients:</strong></p>
+           <ul>
+               {% for used in recipe.usedIngredients %}
+               <li>{{ used.original }}</li>
+               {% endfor %}
+           </ul>
+           <p><strong>Missed Ingredients ({{ recipe.missedIngredientCount }}):</strong></p>
+           <ul>
+               {% for missed in recipe.missedIngredients %}
+               <li>{{ missed.original }}</li>
+               {% endfor %}
+           </ul>
+           <a href="/recipe/{{ recipe.id }}">View Instructions</a>
+       </li>
+       {% endfor %}
+   </ul>
+</body>
+</html>
+
